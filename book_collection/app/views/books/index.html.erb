@@ -9,11 +9,16 @@
     <tr class="header">
       <th>#</th>
       <th>Title</th>
+      <th>Author</th>
+      <th>Price</th>
       <th>Actions</th>
     </tr>
     <% @books.each do |book| %>
     <tr>
       <td><%= book.title %></td>
+      <td><%= book.author %></td>
+      <td><%= book.price %></td>
+      <td><%= book.published_date %></td>
       <td class="actions">
         <%= link_to("Show", book_path(book), class: 'action show') %>
         <%= link_to("Edit", edit_book_path(book), class: 'action edit') %>

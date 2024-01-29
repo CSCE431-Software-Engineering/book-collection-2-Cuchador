@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   def index
-    @books = Book.order(:title)
+    @books = Book.order(:author)
   end
 
   def show
@@ -8,7 +8,7 @@ class BooksController < ApplicationController
   end
 
   def new
-    @book = Book.new(title: 'None')
+    @book = Book.new()
   end
 
   def create
@@ -51,7 +51,10 @@ class BooksController < ApplicationController
   private
   def book_params
     params.require(:book).permit(
-      :title
+      :title,
+      :author,
+      :price,
+      :published_date
     )
   end
 end
